@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+              xmlns:maps="clr-namespace:Xamarin.Forms.GoogleMaps;assembly=Xamarin.Forms.GoogleMaps"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="BakkiefyDriver.Views.OnlinePage">
+    <ContentPage.Content>
+        <Grid Margin="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="10*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <StackLayout Orientation="Horizontal" >
+                <Slider x:Name="slider" Value="{Binding Radius, Mode=TwoWay}"   Maximum="5" Minimum="1"  HorizontalOptions="FillAndExpand" />
+                <Label Text="{Binding Radius, StringFormat='{0} km radius'}" VerticalOptions="Center" HorizontalOptions="End"/>
+            </StackLayout>
+
+            <maps:Map x:Name="map"  MapType="Street" Grid.Row="1" IsTrafficEnabled="True" IsShowingUser="True" VerticalOptions="FillAndExpand"/>
+            <StackLayout Orientation="Horizontal" Grid.Row="2">
+                <Label Text="{Binding ButtonText}" HorizontalOptions="FillAndExpand" VerticalOptions="Center" />
+                <Switch HorizontalOptions="End"  VerticalOptions="Center" IsToggled="{Binding IsOnline, Mode=TwoWay}" />
+            </StackLayout>
+
+        </Grid>
+
+    </ContentPage.Content>
+</ContentPage>

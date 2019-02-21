@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             xmlns:icon="clr-namespace:Plugin.Iconize;assembly=Plugin.Iconize"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="BakkiefyDriver.Views.RegisterPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <icon:IconLabel Text="md-account-circle" VerticalOptions="Center" HorizontalOptions="Start" />
+                <Entry Placeholder="username" Text="{Binding Username, Mode=TwoWay}" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <icon:IconLabel Text="md-vpn-key" VerticalOptions="Center" HorizontalOptions="Start" />
+                <Entry Placeholder="******" IsPassword="True" Text="{Binding Password, Mode=TwoWay}" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <icon:IconLabel Text="md-vpn-key" VerticalOptions="Center" HorizontalOptions="Start" />
+                <Entry Placeholder="******" IsPassword="True" Text="{Binding ConfirmPassword, Mode=TwoWay}" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                <icon:IconButton Text="login in using facebook" />
+                <icon:IconButton Text="login in using gmail" />
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
